@@ -467,5 +467,28 @@ echo $gregorian."<br>";
 echo explode($gregorian, "/"); 
 echo JDDayOfWeek ($julianday); 
 
+?>
+<br>
+<br>
+<?php
+
+$counter = isset($_COOKIE['counter'])? $_COOKIE['counter'] : 0; 
+$counter++; 
+// setcookie("counter", $counter, 0x7FFFFFFF) ; 
+# Внимание! $_COOKIE['counter'] этот вызов не обновляет! 
+# Новое значение будет доступно только при следующем посещении, 
+echo "Вы запустили этот сценарий $counter раз(а)."; 
+
+?>
+<br>
+<?php 
+
+echo "Значение первого элемента cookie: {$_COOKIE['arr'][0]}<br>"; 
+echo "{$_REQUEST['arr'][1][0]} - What did you just say?";
+
+?>
+<br>
+<?php  
+
 
 ?>
