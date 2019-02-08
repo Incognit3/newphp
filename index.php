@@ -6,8 +6,7 @@ $а = array (10, 20, 30);
 echo  $a; 
 print_r($a);
 
-?>
-<br>	
+?>	
 <?php 
 
 $day = 12;
@@ -19,7 +18,7 @@ $sec = 2;
 
 echo "Все началось $day $month $year года, в $hour:$min:$sec"; 
 
- ?>
+?>
 <br>
 <br>
 <?php  
@@ -45,8 +44,6 @@ if (strpos($str, "<?") !== false)
 echo "это не PHP-программа"; 
 
 ?>
-
-
 <?php  
 
 for ($i=0,$x=0; $х<8; $х++) { 
@@ -291,7 +288,6 @@ $C = compact("");
 </table> 
 
 <br>
-<br>
 <table>
 <?for ($i=1; $i <=20; $i++) {?>
   <tr>
@@ -302,18 +298,17 @@ $C = compact("");
 </table> 
 
 <br>
-<br>
 <?php  
 
 $ourFile = fopen("newtextFile.txt", "r");
 for ($i=0; $s=fgets($ourFile, 1000); $i++) {
 	if (mt_rand(0, $i) == 0) $line = $s; }
-
-echo $line;
+	echo $line;
 
 ?>
 <br>
 <?php  
+ 
  mt_srand(345);
  for ($i=0; $i<5; $i++) echo mt_rand()." ";
  	echo "<br>";
@@ -341,11 +336,169 @@ echo pi (3) *10;
 
 ?>
 <br>
-<?php  
+<?php
 
-$f = fopen("enter\file.txt", "rt") or die ("Ошибка!");
+//$OpenFile_r = fopen ("enter/file.txt", "r") or die ("Ошибка");
+// ($f = fopen("enter\file.txt", "rt")) or die ("Ошибка!");
+// echo fclose ($OpenFile_r);
+// echo fread ($OpenFile_r, 1000);
 
 ?>
+<?php  
 
+function makeHex($st) {
+  for ($i=0; I<strlen($st); $i++);
+     $hex[] = sprintf("%02x", ord($st[$i]));
+   	return join ("", $hex); }
 
+// $f = fopen("file.txt", "rb");
+  // echo makeHex(fgets($f, 100)), "<br>\n";
+
+?>
+<br>
+<?php  
+
+$path = "c:\Windows\System32\drivers\etc\hosts";
+	echo $path. "<br>";
+$path = "c:\OpenServer\domains\php\enter\file.txt";
+	echo $path. "<br>"; 
+
+?>
+<br>
+<?php  
+
+$funcTime = time();
+print_r($funcTime);
+echo "<br>";
+
+echo microtime($asFloat=true);
+echo "<br";
+
+?>
+<br>
+<br>
+<?php
+
+define("START_TIME", microtime(false));
+printf("Время работы скрипта: %.5f с", microtime(true)-START_TIME);
+
+?>
+<br>
+<?php  
+
+echo date("j M Y H:i a", $timestamp);
+echo "<br>";
+
+echo strftime("%d:%c %H %M %A %B", $timestamp);
+echo "</br>"
+
+?>
+<?php 
+
+ echo mktime(222, 333, 111);
+ echo "</br>";
+ setlocale(LC_ALL, "");
+
+?>
+<?php 
+
+echo strftime("%B %Y года, %d число. Был %A, часы показывали %H:%M.");
+echo "<br>"
+
+?>
+<br>
+<?php  
+
+echo date("M-d-Y", mktime(0,0,0,1,2005));
+echo "<br>";
+
+echo date("M-d-Y", mktime (0,0,0,12,32,2004)); 
+echo "<br>";
+
+echo date("M-d-Y", mktime (0,0,0,13,1,2004)); 
+echo "<br>";
+
+?>
+<br>
+<?php  
+
+$check = array(
+	
+	"now",
+	"10 september 2000",
+	"+1 day", 
+	"+1 week",
+	"+1 week 2 days 4 hours 2 seconds",
+	"next Thursday", 
+	"last Monday", 
+
+);
+?>
+<table width="100%">
+	<tr align="left">
+		<th> Входная строка </th>
+		<th> timestamp </th>
+		<th> Получившаяся дата </th>
+		<th> Сегодня </th>
+	</tr>
+<?foreach ($check as $str) {?>
+	<tr>
+		<td><?=$str?></td>
+		<td><?=$stamp=strtotime($str)?></td>
+		<td><?=date("Y-m-d H:i:s", $stamp)?></td>
+		<td><?=date("Y-m-d H:i:s", time())?></td>
+	</tr>
+  <?}?>
+</table>
+<br>
+<?php 
+
+echo getdate($timestamp);
+echo GregorianToJD (123, 5, 2001);
+echo JDToGregorian($jul); 
+$jd = GregorianToJD(10, 11, 1970); 
+echo $jd."<br>"; 
+$gregorian = JDToGregorian($jd); 
+echo $gregorian."<br>"; 
+echo explode($gregorian, "/"); 
+echo JDDayOfWeek ($julianday); 
+
+?>
+<br>
+<br>
+<?php
+
+$counter = isset($_COOKIE['counter'])? $_COOKIE['counter'] : 0; 
+$counter++; 
+// setcookie("counter", $counter, 0x7FFFFFFF) ; 
+# Внимание! $_COOKIE['counter'] этот вызов не обновляет! 
+# Новое значение будет доступно только при следующем посещении, 
+echo "Вы запустили этот сценарий $counter раз(а)."; 
+
+?>
+<br>
+<?php 
+
+echo "Значение первого элемента cookie: {$_COOKIE['arr'][0]}<br>"; 
+echo "{$_REQUEST['arr'][1][0]} - What did you just say?";
+
+?>
+<br>
+<br>
+<?php  
+
+print_r(getimagesize("./image/interstate.png"));
+echo "</br>";
+
+?>
+<br>
+<?php  
+
+var_dump(gd_info());
+
+?>
+<br>
+<?php  
+
+?>
 
