@@ -338,12 +338,22 @@ echo pi (3) *10;
 <br>
 <?php
 
+<<<<<<< HEAD
 //$OpenFile_r = fopen ("enter/file.txt", "r") or die ("Ошибка");
 // ($f = fopen("enter\file.txt", "rt")) or die ("Ошибка!");
 // echo fclose ($OpenFile_r);
 // echo fread ($OpenFile_r, 1000);
 
 ?>
+=======
+$OpenFile_r = fopen ("enter/file.txt", "r") or die ("Ошибка");
+// ($f = fopen("enter\file.txt", "rt")) or die ("Ошибка!");
+echo fclose ($OpenFile_r);
+// echo fread ($OpenFile_r, 1000);
+
+?>
+<br>
+>>>>>>> cb63182b44d7a8802e0183d63389ea5593b8fbf7
 <?php  
 
 function makeHex($st) {
@@ -365,6 +375,10 @@ $path = "c:\OpenServer\domains\php\enter\file.txt";
 
 ?>
 <br>
+<<<<<<< HEAD
+=======
+<br>
+>>>>>>> cb63182b44d7a8802e0183d63389ea5593b8fbf7
 <?php  
 
 $funcTime = time();
@@ -407,6 +421,7 @@ echo "<br>"
 
 ?>
 <br>
+<<<<<<< HEAD
 <?php  
 
 echo date("M-d-Y", mktime(0,0,0,1,2005));
@@ -489,12 +504,91 @@ echo "{$_REQUEST['arr'][1][0]} - What did you just say?";
 
 print_r(getimagesize("./image/interstate.png"));
 echo "</br>";
+=======
+<?php  
+
+echo date("M-d-Y", mktime(0,0,0,1,2005));
+echo "<br>";
+
+echo date("M-d-Y", mktime (0,0,0,12,32,2004)); 
+echo "<br>";
+
+echo date("M-d-Y", mktime (0,0,0,13,1,2004)); 
+echo "<br>";
+>>>>>>> cb63182b44d7a8802e0183d63389ea5593b8fbf7
 
 ?>
 <br>
 <?php  
+<<<<<<< HEAD
 
 var_dump(gd_info());
+=======
+
+$check = array(
+	
+	"now",
+	"10 september 2000",
+	"+1 day", 
+	"+1 week",
+	"+1 week 2 days 4 hours 2 seconds",
+	"next Thursday", 
+	"last Monday", 
+
+);
+?>
+<table width="100%">
+	<tr align="left">
+		<th> Входная строка </th>
+		<th> timestamp </th>
+		<th> Получившаяся дата </th>
+		<th> Сегодня </th>
+	</tr>
+<?foreach ($check as $str) {?>
+	<tr>
+		<td><?=$str?></td>
+		<td><?=$stamp=strtotime($str)?></td>
+		<td><?=date("Y-m-d H:i:s", $stamp)?></td>
+		<td><?=date("Y-m-d H:i:s", time())?></td>
+	</tr>
+  <?}?>
+</table>
+<br>
+<?php 
+
+echo getdate($timestamp);
+echo GregorianToJD (123, 5, 2001);
+echo JDToGregorian($jul); 
+$jd = GregorianToJD(10, 11, 1970); 
+echo $jd."<br>"; 
+$gregorian = JDToGregorian($jd); 
+echo $gregorian."<br>"; 
+echo explode($gregorian, "/"); 
+echo JDDayOfWeek ($julianday); 
+
+?>
+<br>
+<br>
+<?php
+
+$counter = isset($_COOKIE['counter'])? $_COOKIE['counter'] : 0; 
+$counter++; 
+// setcookie("counter", $counter, 0x7FFFFFFF) ; 
+# Внимание! $_COOKIE['counter'] этот вызов не обновляет! 
+# Новое значение будет доступно только при следующем посещении, 
+echo "Вы запустили этот сценарий $counter раз(а)."; 
+
+?>
+<br>
+<?php 
+
+echo "Значение первого элемента cookie: {$_COOKIE['arr'][0]}<br>"; 
+echo "{$_REQUEST['arr'][1][0]} - What did you just say?";
+
+?>
+<br>
+<?php  
+>>>>>>> cb63182b44d7a8802e0183d63389ea5593b8fbf7
 
 ?>
 <br>
@@ -502,3 +596,4 @@ var_dump(gd_info());
 
 ?>
 
+?>
